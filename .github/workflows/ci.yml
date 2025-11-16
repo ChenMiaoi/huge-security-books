@@ -61,6 +61,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+      with:
+        submodules: true
     - name: Update rustup
       run: rustup self update
     - name: Install Rust
@@ -87,7 +89,7 @@ jobs:
         aspell --version
         shellcheck --version
     - name: Shellcheck
-      run: find . -name '*.sh' -print0 | xargs -0 shellcheck
+      run: find . -name '*.sh' -not -path './autocorrect/*' -not -path '*/packages/autocorrect/*' -print0 | xargs -0 shellcheck
     - name: Spellcheck
       run: bash ci/spellcheck.sh list
     - name: Lint for local file paths
