@@ -223,7 +223,7 @@ echo ""
 # ========================================
 echo "🔗 Running link checker: 'bash scripts/linkcheck.sh book'..."
 
-bash scripts/linkcheck.sh book || {
+bash scripts/linkcheck.sh -i book || {
     echo "❌ Error: 'bash scripts/linkcheck.sh book' failed. Check for broken links."
     popd > /dev/null 2>&1 || true
     exit 1
