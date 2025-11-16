@@ -1,0 +1,3 @@
+[submodule "packages/autocorrect"]
+	path = packages/autocorrect
+	url = https://github.com/huacnlee/autocorrect.git

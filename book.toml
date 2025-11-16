@@ -1,0 +1,23 @@
+[book]
+authors = ["Chen Miao"]
+language = "en"
+src = "src"
+title = "The Huge Security Book"
+
+[output.html]
+git-repository-url = "https://github.com/ChenMiaoi/huge-security-books"
+mathjax-support = true
+
+[rust]
+edition = "2024"
+
+[output.html.playground]
+editable = true
+copyable = true
+copy-js = true
+line-numbers = true
+runnable = true
+
+[output.html.print]
+enable = true
+page-break = true
