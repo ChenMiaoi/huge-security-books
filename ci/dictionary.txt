@@ -84,6 +84,8 @@ cmdlet
 coercions
 combinator
 ConcreteType
+concolic
+Concolic
 config
 Config
 confignew
@@ -208,6 +210,8 @@ GitHub
 gitignore
 grapheme
 Grapheme
+greybox
+Greybox
 growable
 gzip
 handcoded
