@@ -155,8 +155,20 @@ echo ""
 
 echo "🔤 Running spellcheck all scripts..."
 
-find . -name '*.sh' -not -path './autocorrect/*' -not -path '*/packages/autocorrect/*' -print0 | xargs -0 shellcheck || {
-    echo "❌ Error: 'find . -name '*.sh' -print0 | xargs -0 shellcheck' failed"
+exclude_dirs=(
+    "*/packages/autocorrect/**"
+    "*/src/fuzz/books/codes/.venv/**"
+    "*/book/**"
+)
+
+find_args=()
+
+for pattern in "${exclude_dirs[@]}"; do
+    find_args+=(-not -path "$pattern")
+done
+
+find . -name "*.sh" -type f "${find_args[@]}" -exec shellcheck {} + || {
+    echo "❌ Error: shellcheck failed"
     popd > /dev/null 2>&1 || true
     exit 1
 }

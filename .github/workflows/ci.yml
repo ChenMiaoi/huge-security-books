@@ -89,7 +89,20 @@ jobs:
         aspell --version
         shellcheck --version
     - name: Shellcheck
-      run: find . -name '*.sh' -not -path './autocorrect/*' -not -path '*/packages/autocorrect/*' -print0 | xargs -0 shellcheck
+      run: |
+        exclude_dirs=(
+            "*/packages/autocorrect/**"
+            "*/src/fuzz/books/codes/.venv/**"
+            "*/book/**"
+        )
+
+        find_args=()
+
+        for pattern in "${exclude_dirs[@]}"; do
+            find_args+=(-not -path "$pattern")
+        done
+        
+        find . -name "*.sh" -type f "${find_args[@]}" -exec shellcheck {} +
     - name: Spellcheck
       run: bash ci/spellcheck.sh list
     - name: Lint for local file paths
