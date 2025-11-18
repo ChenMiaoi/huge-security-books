@@ -41,3 +41,6 @@
     - [Part Ⅵ: Managing Fuzzing](fuzz/books/part_6/index.md)
       - [Fuzzing in the Large](fuzz/books/part_6/fuzz_in_large.md)
       - [When To Stop Fuzzing](fuzz/books/part_6/when_stop.md)
+  - [AFL](fuzz/afl/index.md)
+    - [Historical](fuzz/afl/historical_notes.md)
+    - [Technical Detailed](fuzz/afl/technical_details.md)
