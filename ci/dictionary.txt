@@ -190,6 +190,7 @@ filesystem's
 filesystems
 filmmaking
 Firefox
+firewalld
 FirstAwaitPoint
 FnMut
 FnOnce

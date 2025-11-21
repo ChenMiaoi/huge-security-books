@@ -1,6 +1,7 @@
 # Summary
 
 [主页](homepage.md)
+[贡献指南](contribution.md)
 
 - [Fuzzing](fuzz/index.md)
   - [Book](fuzz/books/index.md)
